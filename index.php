@@ -13,4 +13,5 @@ left join category on article.category_id = category.id
 where category.parent_id != 0;
 <!--4. Get list of users whose first name starts with the letter 'V'-->
 select * from user
-where username like 'V%';
+left join user_data_first_name on user.id = user_data_first_name.user_id
+where user_data_first_name.value like 'V%';
